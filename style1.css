@@ -1,0 +1,145 @@
+/* Fondo de pantalla */
+body {
+    background-image: url('img/jijiji.jfif'); /* Ruta de la imagen */
+    background-size: contain ; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que la imagen se quede fija al hacer scroll */
+    margin: 0; /* Elimina los márgenes del body */
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Música de fondo */
+audio {
+    display: none;
+}
+
+/* Superposición de fondo */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Color oscuro con opacidad */
+    z-index: -1; /* Mantén la capa de fondo debajo */
+}
+.girasol {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('img/girasol.png'); /* Asegúrate de que la imagen de girasol esté en la ruta correcta */
+    background-size: cover;
+    animation: aparecer 2s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); /* Comienza desde abajo */
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0); /* Se mueve a su posición original */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px); /* Se mueve hacia arriba */
+    }
+}
+
+
+/* Estilo del texto animado */
+.texto-animado h1 {
+    font-size: 3rem; /* Tamaño de fuente más pequeño */
+    font-weight: bold;
+    color: #ff4081;
+    text-align: center; /* Centra el texto */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Agrega sombra para mejorar la legibilidad */
+    max-width: 80%; /* Limita el tamaño máximo del texto */
+    word-wrap: break-word; /* Evita que el texto se salga del contenedor */
+    animation: moverTexto 8s ease-in-out infinite, cambiarColor 4s infinite; /* Animaciones más suaves */
+    margin: 0 20px; /* Agrega un pequeño margen alrededor */
+}
+
+/* Animación de movimiento más suave */
+@keyframes moverTexto {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateX(50%) rotate(0deg);
+    }
+}
+
+/* Animación de cambio de color */
+@keyframes cambiarColor {
+    0% {
+        color: #d62f67;
+    }
+    50% {
+        color: #b328c5;
+    }
+    100% {
+        color: #b42f5c;
+    }
+}
+.botones {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* Asegura que los botones estén por encima de los girasoles y el fondo */
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #ff4081;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #e91e63;
+    transform: scale(1.1); /* Agranda el botón cuando el cursor pasa por encima */
+}
+
+.btn:focus {
+    outline: none;
+}
+
+/* Estilo específico para el botón de reproducción */
+.btn-play {
+    background-color: #4caf50;
+}
+
+.btn-play:hover {
+    background-color: #388e3c;
+}
+
+/* Estilo específico para el botón de pausa */
+.btn-pause {
+    background-color: #f44336;
+}
+
+.btn-pause:hover {
+    background-color: #d32f2f;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Girasoles Aleatorios y Texto Animado</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <audio id="audio" loop autoplay>
+        <source src="mp3/Francisca Valenzuela - Afortunada (Official Audio).mp3" type="audio/mp3">
+    </audio>
+    <script>
+        window.onload = function() {
+            const audio = document.getElementById('audio');
+        
+            // Desmutear el audio después de que la página se cargue
+            setTimeout(() => {
+                audio.muted = false;
+            }, 500); // Un pequeño delay para evitar restricciones del navegador
+        };
+        </script>
+    <div class="texto-animado">
+        <h1>Te Amo, gracias por ser la mejor todos los dias conmigo y ser el amor de mi vida, espero que este san valentin y cumple mes puedan ser eternos</h1>
+    </div>
+    <div class="girasol"></div>
+    <div class="girasol"></div>
+    <div class="girasol"></div>
+    <div class="girasol"></div>
+    <div class="girasol"></div>
+    <div class="girasol"></div>
+    <div class="girasol"></div>
+    <div class="girasol"></div>
+
+    <script src="script1.js"></script>
+</body>
+</html>

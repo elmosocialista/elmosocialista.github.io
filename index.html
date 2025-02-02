@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de San Valentín</title>
+    <link rel="stylesheet" href="style.css">
+    <style>h2 {
+    font-size: 10px; 
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: white; 
+    font-weight: bold; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+    border-radius: 5px; 
+    text-align: center; 
+}
+</style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="pregunta-container">
+            <h1 id="pregunta"></h1>
+            <form id="formulario" action="https://formspree.io/f/meoekzwd" method="POST">
+                <input type="text" id="respuesta" name="respuesta" placeholder="Escribe tu respuesta..." required>
+                <button type="submit" id="siguiente">Siguiente</button>
+            </form>
+            
+        </div>
+        <div id="invitacion-container" style="display: none;">
+            <h1>¡Feliz San Valentín!</h1>
+            <p>¿Aceptas ser mi San Valentín?</p>
+           
+            <button id="aceptar">Aceptar</button>
+            <button id="rechazar">Rechazar</button>
+            <div id="imagenes-container">
+                <img src="img/girasol.png" alt="Girasol" class="imagen-invitacion">
+                <img src="img/corazon.webp" alt="Corazón" class="imagen-invitacion">
+                <img src="img/girasol.png" alt="Girasol" class="imagen-invitacion">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <h2>nunca espectadora mi vida</h2>
+</body>
+</html>
